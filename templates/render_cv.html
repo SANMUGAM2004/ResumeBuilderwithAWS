@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendered CV</title>
+</head>
+<body>
+    <h1>Rendered CV</h1>
+
+    <div>
+        <iframe src="{{ s3_pdf_url }}" width="1000" height="600" style="border: none;"></iframe>
+    </div>  
+
+    <!-- Download button -->
+    <div>
+    <a href="{{ s3_pdf_url }}" download="CV.pdf">
+        <button>Download PDF</button>
+    </a>
+    </div>
+</body>
+</html>

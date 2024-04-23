@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Submission Form</title>
+</head>
+<body>
+    <h1>Resume Submission Form</h1>
+    <form action="/submit" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="text" id="phone" name="phone"><br>
+
+        <label for="website">Website URL:</label><br>
+        <input type="text" id="website" name="website"><br>
+
+        <label for="linkedin">LinkedIn Username:</label><br>
+        <input type="text" id="linkedin" name="linkedin"><br>
+
+        <label for="github">GitHub Username:</label><br>
+        <input type="text" id="github" name="github"><br>
+
+        <label for="summary">Summary:</label><br>
+        <textarea id="summary" name="summary"></textarea><br>
+
+        <h2>Education</h2>
+        <div id="education">
+            <div class="education">
+                <label for="institution_1">Institution:</label>
+                <input type="text" name="institution_1">
+                <br>
+                <label for="area_1">Area of Study:</label>
+                <input type="text" name="area_1">
+                <br>
+                <label for="degree_1">Degree:</label>
+                <input type="text" name="degree_1">
+                <br>
+                <label for="edu_start_date_1">Start Date:</label>
+                <input type="text" name="edu_start_date_1" placeholder="YYYY-MM">
+                <br>
+                <label for="edu_end_date_1">End Date:</label>
+                <input type="text" name="edu_end_date_1" placeholder="YYYY-MM">
+                <br>
+                <label for="edu_highlights_1">Highlights:</label>
+                <textarea name="edu_highlights_1"></textarea>
+                <hr>
+            </div>
+        </div>
+        <button type="button" onclick="addEducation()">Add Education</button>
+        <br>
+
+
+        <h2>Projects</h2>
+        <div id="projects">
+            <div class="project">
+                <label for="project_name_1">Name:</label>
+                <input type="text" name="project_name_1">
+                <br>
+                <label for="project_date_1">Date:</label>
+                <input type="text" name="project_date_1" placeholder="YYYY or YYYY-MM">
+                <br>
+                <label for="project_highlights_1">Highlights:</label>
+                <textarea name="project_highlights_1"></textarea>
+                <hr>
+            </div>
+        </div>
+        <button type="button" onclick="addProject()">Add Project</button>
+        <br>
+
+
+        <h2>Additional Experience and Awards</h2>
+        <div id="experience_and_awards">
+            <div class="experience_or_award">
+                <label for="experience_or_award_label_1">Label:</label>
+                <input type="text" name="experience_or_award_label_1">
+                <br>
+                <label for="experience_or_award_details_1">Details:</label>
+                <textarea name="experience_or_award_details_1"></textarea>
+                <hr>
+            </div>
+        </div>
+        <button type="button" onclick="addExperienceOrAward()">Add Experience or Award</button>
+        <br>
+
+
+        <h2>Technologies</h2>
+        <div id="technologies">
+            <div class="technology">
+                <label for="technology_label_1">Label:</label>
+                <input type="text" name="technology_label_1">
+                <br>
+                <label for="technology_details_1">Details:</label>
+                <textarea name="technology_details_1"></textarea>
+                <hr>
+            </div>
+        </div>
+        <button type="button" onclick="addTechnology()">Add Technology</button>
+        <br>
+
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function addEducation() {
+            var educationDiv = document.getElementById("education");
+            var educationCount = educationDiv.getElementsByClassName("education").length + 1; // Get the count of existing education sections and increment by 1
+            var newEducationDiv = document.createElement("div");
+            newEducationDiv.classList.add("education");
+            newEducationDiv.innerHTML = `
+                <label for="institution_${educationCount}">Institution:</label>
+                <input type="text" name="institution_${educationCount}">
+                <br>
+                <label for="area_${educationCount}">Area of Study:</label>
+                <input type="text" name="area_${educationCount}">
+                <br>
+                <label for="degree_${educationCount}">Degree:</label>
+                <input type="text" name="degree_${educationCount}">
+                <br>
+                <label for="edu_start_date_${educationCount}">Start Date:</label>
+                <input type="text" name="edu_start_date_${educationCount}" placeholder="YYYY-MM">
+                <br>
+                <label for="edu_end_date_${educationCount}">End Date:</label>
+                <input type="text" name="edu_end_date_${educationCount}" placeholder="YYYY-MM">
+                <br>
+                <label for="edu_highlights_${educationCount}">Highlights:</label>
+                <textarea name="edu_highlights_${educationCount}"></textarea>
+                <hr>`;
+            educationDiv.appendChild(newEducationDiv);
+        }
+
+
+        function addProject() {
+            var projectsDiv = document.getElementById("projects");
+            var projectCount = projectsDiv.getElementsByClassName("project").length + 1; // Get the count of existing projects and increment by 1
+            var newProjectDiv = document.createElement("div");
+            newProjectDiv.classList.add("project");
+            newProjectDiv.innerHTML = `
+                <label for="project_name_${projectCount}">Name:</label>
+                <input type="text" name="project_name_${projectCount}">
+                <br>
+                <label for="project_date_${projectCount}">Date:</label>
+                <input type="text" name="project_date_${projectCount}" placeholder="YYYY or YYYY-MM">
+                <br>
+                <label for="project_highlights_${projectCount}">Highlights:</label>
+                <textarea name="project_highlights_${projectCount}"></textarea>
+                <hr>`;
+            projectsDiv.appendChild(newProjectDiv);
+        }
+
+
+        function addAdditionalExperienceAndAward() {
+        var experienceAndAwardsDiv = document.getElementById("experience_and_awards");
+        var experienceAndAwardsCount = experienceAndAwardsDiv.getElementsByClassName("experience_or_award").length + 1;
+        var newExperienceOrAwardDiv = document.createElement("div");
+        newExperienceOrAwardDiv.classList.add("experience_or_award");
+        newExperienceOrAwardDiv.innerHTML = `
+            <label for="experience_or_award_label_${experienceAndAwardsCount}">Label:</label>
+            <input type="text" name="experience_or_award_label_${experienceAndAwardsCount}">
+            <br>
+            <label for="experience_or_award_details_${experienceAndAwardsCount}">Details:</label>
+            <textarea name="experience_or_award_details_${experienceAndAwardsCount}"></textarea>
+            <hr>`;
+        experienceAndAwardsDiv.appendChild(newExperienceOrAwardDiv);
+    }
+
+    function addTechnology() {
+        var technologiesDiv = document.getElementById("technologies");
+        var technologiesCount = technologiesDiv.getElementsByClassName("technology").length + 1;
+        var newTechnologyDiv = document.createElement("div");
+        newTechnologyDiv.classList.add("technology");
+        newTechnologyDiv.innerHTML = `
+            <label for="technology_label_${technologiesCount}">Label:</label>
+            <input type="text" name="technology_label_${technologiesCount}">
+            <br>
+            <label for="technology_details_${technologiesCount}">Details:</label>
+            <textarea name="technology_details_${technologiesCount}"></textarea>
+            <hr>`;
+        technologiesDiv.appendChild(newTechnologyDiv);
+    }
+
+    </script> 
+</body>
+</html>

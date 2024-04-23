@@ -1,0 +1,38 @@
+cv:
+  email: hmsanmugam@gmail.com
+  location: coimbatore
+  name: sanmugam
+  phone: tel:+91-1234567890
+  sections:
+    additional_experience_and_awards:
+    - details: Taught two full-credit Computer Science courses.
+      label: Instructor (2003 - 2005)
+    education:
+    - area: IT
+      degree: BTech
+      end_date: 2025-05
+      highlights:
+      - Education is important
+      institution: Karpagam Institute of Technology
+      start_date: 2021-05
+    projects:
+    - date: 2024-05
+      highlights:
+      - Resume Building project
+      name: Resume Builder
+    summary:
+    - Driven and enthusiastic IT professional seeking to leverage strong analytical
+      skills and passion for technology in a dynamic cloud computing environment.
+      Eager to contribute to the design, implementation, and optimization of cloud-based
+      solutions to enhance organizational efficiency and drive business growth.
+    technologies:
+    - details: Java, Python, C
+      label: Languages
+    - details: Vs code,Docker
+      label: Software
+  social_networks:
+  - network: LinkedIn
+    username: www.hmsanmugam.com
+  - network: GitHub
+    username: github.com
+  website: https://yourwebsite.com/
